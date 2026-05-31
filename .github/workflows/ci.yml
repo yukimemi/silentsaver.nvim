@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        nvim: [stable, nightly]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: ${{ matrix.nvim }}
+
+      - name: Clone mini.nvim
+        uses: actions/checkout@v4
+        with:
+          repository: echasnovski/mini.nvim
+          path: deps/mini.nvim
+
+      - name: Run tests
+        shell: bash
+        run: |
+          set -e
+          status=0
+          for f in tests/silentsaver/test_*.lua; do
+            echo "=== $f ==="
+            nvim -u NONE -l scripts/run_tests.lua "$f" || status=$?
+          done
+          exit $status
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: JohnnyMorganz/stylua-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --check .

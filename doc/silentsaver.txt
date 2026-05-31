@@ -1,0 +1,64 @@
+*silentsaver.txt*  Silent, automatic, versioned file backups
+
+==============================================================================
+INTRODUCTION                                                     *silentsaver*
+
+silentsaver.nvim snapshots your buffers in the background as you edit, keeping
+a timestamped version history you can browse and diff. Disk I/O is async, so
+saves are never blocked.
+
+Pure Lua, Neovim only. Requires Neovim >= 0.10.
+
+==============================================================================
+SETUP                                                      *silentsaver-setup*
+
+>lua
+    require("silentsaver").setup({
+      notify = false,
+      log_level = "warn",
+      enabled = true,
+      dir = vim.fn.stdpath("state") .. "/silentsaver",
+      events = { "BufWritePre", "CursorHold" },
+      ignore_filetypes = { "log" },
+      dedupe = true,
+      use_ui_select = false,
+      diff_vertical = false,
+      retention = { max_per_file = 0, max_age_days = 0 },
+    })
+<
+
+Backups are written under
+`<dir>/<original-path>/<filename>/<yyyymmdd_HHMMSSmmm><ext>`.
+
+==============================================================================
+COMMANDS                                                *silentsaver-commands*
+
+                                                            *:SilentSaverOpen*
+:SilentSaverOpen     Browse the backups of the current file.
+
+                                                            *:SilentSaverDiff*
+:SilentSaverDiff     Diff a backup (the current buffer) against its original.
+
+                                                          *:SilentSaverBackup*
+:SilentSaverBackup   Back up the current buffer now.
+
+           *:SilentSaverEnable* *:SilentSaverDisable* *:SilentSaverToggle*
+:SilentSaverEnable   Resume / pause / toggle automatic backups.
+:SilentSaverDisable
+:SilentSaverToggle
+
+==============================================================================
+LUA API                                                      *silentsaver-api*
+
+    require("silentsaver").backup()    ~
+    require("silentsaver").open()      ~
+    require("silentsaver").diff()      ~
+    require("silentsaver").enable()    ~
+    require("silentsaver").disable()   ~
+
+==============================================================================
+HEALTH                                                    *silentsaver-health*
+
+    :checkhealth silentsaver
+
+ vim:tw=78:ts=8:ft=help:norl:

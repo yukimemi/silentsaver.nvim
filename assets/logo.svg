@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="silentsaver — silent, automatic file backups">
+  <title>silentsaver — silent, automatic file backups</title>
+
+  <defs>
+    <linearGradient id="ss-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a9d8f"/>
+      <stop offset="1" stop-color="#43c59e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- icon: stacked version snapshots, backed up safely -->
+  <g>
+    <rect x="44" y="36" width="60" height="90" rx="12" fill="#bfe9e0"/>
+    <rect x="34" y="27" width="60" height="90" rx="12" fill="#7ad3c2"/>
+    <rect x="24" y="18" width="60" height="90" rx="12" fill="url(#ss-g)"/>
+    <path d="M40 62 l9 10 l17 -22" fill="none" stroke="#ffffff" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="150" y="92"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="50" letter-spacing="-1.5"
+        fill="#1a1a1a">silentsaver</text>
+
+  <!-- tagline -->
+  <text x="152" y="120"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-style="italic" font-size="15"
+        fill="#5a5a5a">silent, automatic file backups</text>
+</svg>
