@@ -65,7 +65,10 @@ T["run backs up, dedupe skips identical, change adds a version"] = function()
   fd:close()
   vim.cmd.edit(vim.fn.fnameescape(src))
 
-  local outdir = vim.fs.dirname(backup.backup_path(src))
+  -- derive outdir from the buffer name run() will see (the path may be
+  -- canonicalized, e.g. macOS /tmp -> /private/tmp)
+  local bufname = vim.fs.normalize(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p"))
+  local outdir = vim.fs.dirname(backup.backup_path(bufname))
 
   backup.run()
   vim.wait(2000, function()
@@ -100,7 +103,8 @@ T["disabled state suppresses backups"] = function()
   fd:close()
   vim.cmd.edit(vim.fn.fnameescape(src))
 
-  local outdir = vim.fs.dirname(backup.backup_path(src))
+  local bufname = vim.fs.normalize(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p"))
+  local outdir = vim.fs.dirname(backup.backup_path(bufname))
   backup.run()
   vim.wait(300)
   eq(#list_backups(outdir), 0)
