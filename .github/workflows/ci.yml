@@ -1,3 +1,5 @@
+# kata-managed — source: yukimemi/pj-nvim/.github/workflows/ci.yml.tera
+# Local edits are reverted on the next `kata apply`. Push fixes upstream.
 name: CI
 
 on:
@@ -7,6 +9,7 @@ on:
 
 jobs:
   test:
+    name: test (${{ matrix.os }} / nvim ${{ matrix.nvim }})
     strategy:
       fail-fast: false
       matrix:
@@ -14,7 +17,7 @@ jobs:
         nvim: [stable, nightly]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: rhysd/action-setup-vim@v1
         with:
@@ -22,7 +25,7 @@ jobs:
           version: ${{ matrix.nvim }}
 
       - name: Clone mini.nvim
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: echasnovski/mini.nvim
           path: deps/mini.nvim
@@ -30,18 +33,30 @@ jobs:
       - name: Run tests
         shell: bash
         run: |
-          set -e
+          # One nvim invocation per test file so a crash in one file
+          # cannot take the rest of the suite down with it, and so the
+          # failing file is obvious from the group heading.
+          set -euo pipefail
+          # A plugin with no suite yet is a valid consumer of this layer;
+          # `find` on a missing path exits non-zero and would fail the job
+          # under `set -e`.
+          if [ ! -d tests ]; then
+            echo "no tests/ directory — skipping"
+            exit 0
+          fi
           status=0
-          for f in tests/silentsaver/test_*.lua; do
-            echo "=== $f ==="
+          while IFS= read -r f; do
+            echo "::group::$f"
             nvim -u NONE -l scripts/run_tests.lua "$f" || status=$?
-          done
+            echo "::endgroup::"
+          done < <(find tests -type f -name 'test_*.lua' | sort)
           exit $status
 
   lint:
+    name: stylua
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,81 @@
+preset = "github.com/yukimemi/pj-presets:nvim"
+applied_at = "2026-07-26T06:37:21.2696302Z"
+
+[[templates]]
+source = "github.com/yukimemi/pj-base"
+rev = "6937855c337a91db5b754708fb0aa2b940ad9da4"
+version = "0.13.0"
+
+[[templates]]
+source = "github.com/yukimemi/pj-nvim"
+rev = "446f20b2be3aed79e1fcea1b0ac0b8b22bfab673"
+version = "0.1.0"
+
+[files.".agents/skills/renri/SKILL.md"]
+once_applied = true
+
+[files.".claude/skills/renri/SKILL.md"]
+once_applied = true
+
+[files.".gemini/settings.json"]
+content_hash = "486c974de88903113ed99b4e643432b7050e88f1031276f5263e8da7b43fe11e"
+
+[files.".gitattributes"]
+content_hash = "6d380d1ecc2f882c2011429d548a6f3c774b74f0c757d884453e4667172acc2a"
+
+[files.".github/workflows/apm-bump.yml"]
+content_hash = "d7331ae3c991ee893b97dd182ffeabfc5314798a6c9a8595a4c874b1f9b52ad9"
+
+[files.".github/workflows/ci.yml"]
+content_hash = "4eb3a5b3d158aab6ed44c6c2c51980880a6dcaf6367681f387cd95519c23c760"
+
+[files.".github/workflows/claude-review.yml"]
+content_hash = "cd1897a139d89a32b0af07480568419624e774c8ecfa60276917ac70f1306cde"
+
+[files.".github/workflows/claude.yml"]
+content_hash = "ce7d9c6af3bd3019cfd71e2f9391db11441a855150fb1da0f5ed83a6647ee15d"
+
+[files.".github/workflows/kata-apply.yml"]
+content_hash = "2256d160721583ff5b6afe5c9a1778761f7ce6fc5ba46dbe27c9cd7d803a0632"
+
+[files.".gitignore"]
+content_hash = "4bebd1c3417c33f9d1c51f011694f6d82b098bbb1a5a102ba56e97ab01a866ef"
+
+[files.".kata/vars.toml"]
+once_applied = true
+
+[files.".stylua.toml"]
+content_hash = "7f28594ddc3ea22d04619cdafab44c597e555f9f9d396100b417fde702b4bfd0"
+
+[files.".styluaignore"]
+once_applied = true
+
+[files."AGENTS.md"]
+content_hash = "234c43bbc3e9067036574ebaab7869b3ab8160ea2d700cb5995a93ad795a56f4"
+
+[files."CLAUDE.md"]
+content_hash = "a76b3af252969b8120128d7ce44f2b6cfdcf88c7420ee00675732f542d047529"
+
+[files."GEMINI.md"]
+content_hash = "3670f70a2f0be4013926bab6e878b90a42ad64c17899080aef4d193b246fa390"
+
+[files.LICENSE]
+once_applied = true
+
+[files."OPENCODE.md"]
+content_hash = "11993dc7feec5fca8e83934f135de33879b88f100c48aeba0729de2f57a11a48"
+
+[files."apm.lock.yaml"]
+once_applied = true
+
+[files."apm.yml"]
+once_applied = true
+
+[files."opencode.json"]
+content_hash = "2ada1cf4347db9e98fadd67ca72cd9e29042c5bf6ab719d666b5d71f97663e81"
+
+[files."renovate.json"]
+once_applied = true
+
+[files."renri.toml"]
+content_hash = "bf0708e919520f39120cd83b7ed2b60b6933515665c6603597e69b505cbfe07c"
