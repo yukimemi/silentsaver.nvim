@@ -17,7 +17,7 @@ jobs:
         nvim: [stable, nightly]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.1.0
 
       - uses: rhysd/action-setup-vim@v1
         with:
@@ -25,7 +25,7 @@ jobs:
           version: ${{ matrix.nvim }}
 
       - name: Clone mini.nvim
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.1.0
         with:
           repository: echasnovski/mini.nvim
           path: deps/mini.nvim
@@ -56,7 +56,7 @@ jobs:
     name: stylua
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.1.0
       - uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
