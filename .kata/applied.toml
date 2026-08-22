@@ -1,14 +1,14 @@
 preset = "github.com/yukimemi/pj-presets:nvim"
-applied_at = "2026-07-26T06:37:21.2696302Z"
+applied_at = "2026-08-22T04:47:18.141420649Z"
 
 [[templates]]
 source = "github.com/yukimemi/pj-base"
-rev = "6937855c337a91db5b754708fb0aa2b940ad9da4"
-version = "0.13.0"
+rev = "8217f1a99c55240c7337f40b8afb35d9e9232499"
+version = "0.14.0"
 
 [[templates]]
 source = "github.com/yukimemi/pj-nvim"
-rev = "446f20b2be3aed79e1fcea1b0ac0b8b22bfab673"
+rev = "f67ddc6ab30c6e354181b47438325a05f49849f2"
 version = "0.1.0"
 
 [files.".agents/skills/renri/SKILL.md"]
@@ -24,24 +24,25 @@ content_hash = "486c974de88903113ed99b4e643432b7050e88f1031276f5263e8da7b43fe11e
 content_hash = "6d380d1ecc2f882c2011429d548a6f3c774b74f0c757d884453e4667172acc2a"
 
 [files.".github/workflows/apm-bump.yml"]
-content_hash = "d7331ae3c991ee893b97dd182ffeabfc5314798a6c9a8595a4c874b1f9b52ad9"
+content_hash = "85b195e27232805149919455cf3e9906cec9e5c5d82c1b0e9c668db355844ed1"
 
 [files.".github/workflows/ci.yml"]
-content_hash = "4eb3a5b3d158aab6ed44c6c2c51980880a6dcaf6367681f387cd95519c23c760"
+content_hash = "1720dd0187b68a2a27452f9cd54b1e7b5155858af93b14eefd86ceebcfc6f84e"
 
 [files.".github/workflows/claude-review.yml"]
-content_hash = "cd1897a139d89a32b0af07480568419624e774c8ecfa60276917ac70f1306cde"
+content_hash = "9c07be16af6dc6f1e86b8a845a64a5c54b0d9092b8b34a9c4eefe31e84269509"
 
 [files.".github/workflows/claude.yml"]
-content_hash = "ce7d9c6af3bd3019cfd71e2f9391db11441a855150fb1da0f5ed83a6647ee15d"
+content_hash = "2db473008ec9528565097a8e543c7a5586a6dd383d8f3e32e094ca78e8e9c2f5"
 
 [files.".github/workflows/kata-apply.yml"]
-content_hash = "2256d160721583ff5b6afe5c9a1778761f7ce6fc5ba46dbe27c9cd7d803a0632"
+content_hash = "3e0e0491a0a1bf4dc0fd4e62cb57748278ff578ceca95e9c140f3e82f4cc6e39"
 
 [files.".gitignore"]
 content_hash = "4bebd1c3417c33f9d1c51f011694f6d82b098bbb1a5a102ba56e97ab01a866ef"
 
 [files.".kata/vars.toml"]
+content_hash = "393b2b94540e792790ef9357e46e5bc259eb3064605794ca2373ae458999cb23"
 once_applied = true
 
 [files.".stylua.toml"]
@@ -75,6 +76,7 @@ once_applied = true
 content_hash = "2ada1cf4347db9e98fadd67ca72cd9e29042c5bf6ab719d666b5d71f97663e81"
 
 [files."renovate.json"]
+content_hash = "06539fffe7eee0c593416ce803e5aa2628529fd01fe68bee310da52783c5fc38"
 once_applied = true
 
 [files."renri.toml"]
