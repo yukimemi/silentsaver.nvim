@@ -28,7 +28,7 @@ blocked.
 With [rvpm](https://github.com/yukimemi/rvpm) (recommended):
 
 ```sh
-rvpm add yukimemi/silentsaver.nvim --on-event BufReadPre,BufNewFile --on-cmd '/^SilentSaver.*$/'
+rvpm add yukimemi/silentsaver.nvim --on-event BufReadPre,BufNewFile --on-cmd '/^SilentSaver.*$/' --setup '{}'
 ```
 
 Or in `config.toml`:
@@ -38,17 +38,20 @@ Or in `config.toml`:
 url = "https://github.com/yukimemi/silentsaver.nvim"
 on_event = ["BufReadPre", "BufNewFile"]
 on_cmd = ["/^SilentSaver.*$/"]
-opts = {}
+setup = {}
 ```
 
 > Here `setup()` is **required**: the commands come up either way, but nothing
-> is switched automatically until `require("silentsaver").setup(...)` installs the
-> autocmds. **rvpm >= 3.45.0 handles it for you** — put `opts = {}` (or your
-> options) in the `[[plugins]]` entry and rvpm calls
-> `require("silentsaver").setup(<opts>)` right before the plugin's `after.lua`
-> (same convention as lazy.nvim's `opts`). Use a hook
-> (`rvpm edit yukimemi/silentsaver.nvim --after`) only when the options need a
-> Lua function, which TOML cannot express.
+> is switched automatically until `require("silentsaver").setup(...)` installs
+> the autocmds. **rvpm >= 3.48.0 handles it for you** — the presence of a
+> `setup` field makes rvpm call `require("silentsaver").setup(<opts>)` right
+> before the plugin's `after.lua`. `setup = {}` calls it with no options,
+> `setup = { notify = true }` passes that table through, and omitting `setup`
+> means rvpm never calls it (`--setup` on the command line takes the same TOML
+> inline table). Use a hook (`rvpm edit yukimemi/silentsaver.nvim --after`) for
+> options that need a Lua function, which TOML cannot express; when a single
+> `setup()` call needs both plain data and a Lua function, keep the whole call
+> in `after.lua` and omit `setup`, so the module is never set up twice.
 
 Or with [lazy.nvim](https://github.com/folke/lazy.nvim):
 
