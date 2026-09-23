@@ -1,0 +1,40 @@
+# magi competing on the silentsaver.nvim repository.
+#
+# **Only what is peculiar to this checkout lives here.** The roster, the seat
+# assignment, the shape of a run and the update policy live at the machine
+# layer (`<config_dir>/magi/config.toml`), because none of them are facts
+# about this repository: they are facts about which agent CLIs are installed
+# and what the operator is willing to spend. Stating them once there is the
+# point of having layers, and it keeps this file to the things a different
+# machine would still need to be told.
+#
+# What that leaves, and why each one has to be here:
+#
+# - `[merge] base` names this repository's branch, and is required at all
+#   because of how this checkout is set up (see below).
+# - `[prompts]` are this project's conventions.
+#
+# No `[verify]`: stylua and the headless-Neovim mini.test suite are left to
+# CI, because they need tools the magi machine doesn't have.
+#
+# Rendered by teravars. Tera braces are live everywhere in this file, but
+# comments are stripped before Tera sees them (teravars >= 0.2.2), so a
+# comment may quote `{{ ... }}` freely.
+
+[merge]
+# `base` is set explicitly because this is a jj-colocated checkout: jj keeps
+# git's HEAD detached at the working-copy commit, so the `git symbolic-ref
+# HEAD` fallback magi would otherwise use to infer the base branch fails
+# here. `main` is also what `origin/HEAD` and ci.yml's `push` trigger name.
+base = "main"
+
+# Project conventions appended to the node prompts, never merged into them.
+# Repository-wide context lives in AGENTS.md, which every agent already
+# reads from the checkout; this is the one thing specific to how a magi
+# *node*'s worktree sits inside this checkout.
+[prompts]
+all = """
+This repository uses jj (Jujutsu) with a colocated git repo. `git commit` works \
+in a candidate worktree and is what magi expects, but never run `jj` commands \
+and never touch the main working copy.
+"""
