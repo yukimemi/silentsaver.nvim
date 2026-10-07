@@ -8,7 +8,7 @@ version = "0.18.0"
 
 [[templates]]
 source = "github.com/yukimemi/pj-nvim"
-rev = "1b0b43d1e54e21ea7f2595e783f2be87e46a9430"
+rev = "21e89d4965af92556f58cea4a80469e86d87fe9e"
 version = "0.1.0"
 
 [files.".agents/skills/renri/SKILL.md"]
