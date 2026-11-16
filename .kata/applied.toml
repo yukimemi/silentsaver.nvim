@@ -1,9 +1,9 @@
 preset = "github.com/yukimemi/pj-presets:nvim"
-applied_at = "2026-09-25T03:29:09.579467025Z"
+applied_at = "2026-11-16T03:24:16.050020788Z"
 
 [[templates]]
 source = "github.com/yukimemi/pj-base"
-rev = "319784779fae0b010db4973f99fe2a967e0122c7"
+rev = "e6da08d35873812eae82841e5c7cf82c8d4d0185"
 version = "0.18.0"
 
 [[templates]]
@@ -27,7 +27,7 @@ content_hash = "486c974de88903113ed99b4e643432b7050e88f1031276f5263e8da7b43fe11e
 content_hash = "6d380d1ecc2f882c2011429d548a6f3c774b74f0c757d884453e4667172acc2a"
 
 [files.".github/workflows/apm-bump.yml"]
-content_hash = "0ac5ed2847ab6e1041e34209dcc2396a582722ea9537d03bd950e1db1851a4b7"
+content_hash = "0a0c9c6b744b1fe50665481a003c5b595922e2c811428b6cb35bfb8e79434c15"
 
 [files.".github/workflows/ci.yml"]
 content_hash = "92515a21936d9c0d6022f5c9ed1574f5d24bc3d3d89087a6f627b97a726cf29d"
@@ -39,7 +39,7 @@ content_hash = "4a8e47aabb3cdf2a59030d5194467022f0efb53bb1819d4495752020d10be773
 content_hash = "7bb6c538ec5c2688e01b54e983232fa99f65e24ee16172c4270341345cbdac34"
 
 [files.".github/workflows/kata-apply.yml"]
-content_hash = "7000353151b01b5d14cb8f56e314b1a25b020e22bdf5842dcaf5686efb59facb"
+content_hash = "72267ad7aefb2545ec0e514ccaf8748ed2b3fc3e9c36f73616e6e1c2a34176c1"
 
 [files.".gitignore"]
 content_hash = "4bebd1c3417c33f9d1c51f011694f6d82b098bbb1a5a102ba56e97ab01a866ef"
