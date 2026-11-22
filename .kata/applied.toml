@@ -1,9 +1,9 @@
 preset = "github.com/yukimemi/pj-presets:nvim"
-applied_at = "2026-11-16T03:24:16.050020788Z"
+applied_at = "2026-11-22T03:20:38.7012391Z"
 
 [[templates]]
 source = "github.com/yukimemi/pj-base"
-rev = "e6da08d35873812eae82841e5c7cf82c8d4d0185"
+rev = "fde196ac259b1acde901d0cbc91516ae2fbd7bfb"
 version = "0.18.0"
 
 [[templates]]
@@ -39,7 +39,7 @@ content_hash = "4a8e47aabb3cdf2a59030d5194467022f0efb53bb1819d4495752020d10be773
 content_hash = "7bb6c538ec5c2688e01b54e983232fa99f65e24ee16172c4270341345cbdac34"
 
 [files.".github/workflows/kata-apply.yml"]
-content_hash = "72267ad7aefb2545ec0e514ccaf8748ed2b3fc3e9c36f73616e6e1c2a34176c1"
+content_hash = "c47add76ce8c17a0fff04bc18d2bbd8fe8c3cd03cd93fbe24a16ec4ba162aff4"
 
 [files.".gitignore"]
 content_hash = "4bebd1c3417c33f9d1c51f011694f6d82b098bbb1a5a102ba56e97ab01a866ef"
